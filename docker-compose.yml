@@ -1,0 +1,21 @@
+services:
+  app:
+    build:
+      context: .
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8080:8080"
+    restart: on-failure
+    command: >
+      sh -c "java -jar app.jar"
+
+  db:
+    image: mysql:8
+    ports:
+      - "5555:3306"
+    env_file:
+      - .env
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+    restart: on-failure
