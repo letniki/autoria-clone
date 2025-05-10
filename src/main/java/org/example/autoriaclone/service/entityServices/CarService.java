@@ -18,6 +18,7 @@ import org.example.autoriaclone.service.JwtService;
 import org.example.autoriaclone.service.mails.AdminMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.View;
 
 import java.io.File;
 import java.io.IOException;
@@ -41,42 +42,57 @@ public class CarService {
     private final JwtService jwtService;
     private final RegionConst regionConst;
     private final CarTypeConst carTypeConst;
+    private final View error;
 
     public AverageResponse findAveragePrice(String producer, String model, String ccy, String region, String username) {
         if (!userService.isPremiumAccount(username)) {
             return new AverageResponse(null, null, null, "Not premium account");
         }
-        String currency;
-        List<Car> cars;
-        if (region != null) {
-            cars = carRepository.findByProducerAndModelAndActiveAndRegion(producer, model, true, region);
-        } else {
-            cars = carRepository.findByProducerAndModelAndActive(producer, model, true);
+        try{
+            String currency;
+            List<Car> cars;
+            if (region != null) {
+                cars = carRepository.findByProducerAndModelAndActiveAndRegion(producer, model, true, region);
+            } else {
+                cars = carRepository.findByProducerAndModelAndActive(producer, model, true);
+            }
+            if (ccy != null) {
+                cars.forEach(car -> car.setPrice(
+                        currencyService.transferToCcy(ccy, car.getCurrencyName(), car.getPrice())
+                ));
+                currency = ccy;
+            } else {
+                cars.forEach(car -> car.setPrice(
+                        currencyService.transferToCcy("USD", car.getCurrencyName(), car.getPrice())
+                ));
+                currency = "USD";
+            }
+            List<Integer> prices = cars.stream().map(Car::getPrice).toList();
+            Integer average = averageCalculator(prices);
+            return new AverageResponse( currency, average,prices.size(), null);
+        }catch (Exception e){
+            return new AverageResponse( null, null, null, e.getMessage());
         }
-        if (ccy != null) {
-            cars.forEach(car -> car.setPrice(
-                    currencyService.transferToCcy(ccy, car.getCurrencyName(), car.getPrice())
-            ));
-            currency = ccy;
-        } else {
-            cars.forEach(car -> car.setPrice(
-                    currencyService.transferToCcy("USD", car.getCurrencyName(), car.getPrice())
-            ));
-            currency = "USD";
-        }
-        List<Integer> prices = cars.stream().map(Car::getPrice).toList();
-        Integer average = averageCalculator(prices);
-        return new AverageResponse( currency, average,prices.size(), null);
+
     }
     public CarResponse findById(int id) {
-        Car car = carRepository.findById(id).get();
-        CarDto dto = carMapper.toDto(car);
-        return new CarResponse(dto);
+        try {
+            Car car = carRepository.findById(id).get();
+            CarDto dto = carMapper.toDto(car);
+            return new CarResponse(dto);
+        } catch (Exception e) {
+            return new CarResponse().setError(e.getMessage());
+        }
+
     }
     public CarResponse findByBasicId(int id) {
-        Car car = carRepository.findById(id).get();
-        BasicCarDto dto = carMapper.toBasicDto(car);
-        return new CarResponse(dto);
+        try {
+            Car car = carRepository.findById(id).get();
+            BasicCarDto dto = carMapper.toBasicDto(car);
+            return new CarResponse(dto);
+        } catch (Exception e) {
+            return new CarResponse().setError(e.getMessage());
+        }
     }
     public void addWatchesTotal(int id) {
         Car car = carRepository.findById(id).get();
@@ -152,65 +168,8 @@ public class CarService {
         return "No arguments";
     }
 
-//    public CarResponse saveImage(int id, MultipartFile file, String username) throws IOException {
-//        if (file == null || file.isEmpty()) {
-//            return new CarResponse().setError("No image file provided.");
-//        }
-//        User user = userRepository.findByUsername(username);
-//        List<Car> cars = user.getCars();
-//        try {
-//            userService.isPersonalCarAndIndex(cars, id);
-//        } catch (IllegalArgumentException e) {
-//            return new CarResponse().setError(e.getMessage());
-//        }
-//        String originalName = file.getOriginalFilename();
-//        if (originalName == null || !originalName.contains(".")) {
-//            return new CarResponse().setError("File must have an extension.");
-//        }
-//        String extension = originalName.substring(originalName.lastIndexOf('.') + 1).toLowerCase();
-//        List<String> allowedExtensions = Arrays.asList(imageExtensionsConst.getExtensions());
-//
-//        if (!allowedExtensions.contains(extension)) {
-//            return new CarResponse()
-//                    .setError("Not an image file! Supported extensions: " + String.join(", ", allowedExtensions));
-//        }
-//
-//        Car car = carRepository.findById(id)
-//                .orElseThrow(() -> new NoSuchElementException("Car not found with ID: " + id));
-//
-//        List<Image> images = new ArrayList<>(car.getImages());
-//
-//        int nextImageIndex = images.size();
-//        if (!images.isEmpty()) {
-//            String last = images.get(images.size() - 1).getImageName();
-//            String numberPart = last.split("-")[3].split("\\.")[0];
-//            nextImageIndex = Integer.parseInt(numberPart) + 1;
-//        }
-//
-//        String title = String.format("car-%d-image-%d.%s", id, nextImageIndex, extension);
-//        String path = System.getProperty("user.home") + File.separator + "adImages" + File.separator;
-//        File targetFile = new File(path + title);
-//        file.transferTo(new File(path + title));
-//        if (!targetFile.getParentFile().exists()) {
-//            targetFile.getParentFile().mkdirs(); // создать папку, если нет
-//        }
-//
-//        Image image = new Image();
-//        image.setImageName(title);
-//        image.setType(file.getContentType());
-//        image.setData(file.getBytes());
-//        images.add(image);
-//        car.setImages(images);
-//        Car savedCar = carRepository.save(car);
-//
-//        return userService.isPremiumAccount(username)
-//                ? new CarResponse(carMapper.toDto(savedCar))
-//                : new CarResponse().setCarBasic(carMapper.toBasicDto(savedCar));
-//    }
     public Image getImage(Integer id) {
-        Image image = imageRepository.findImageById(id);
-        return image;
-
+        return imageRepository.findImageById(id);
     }
 
 
