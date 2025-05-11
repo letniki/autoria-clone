@@ -1,9 +1,11 @@
 package org.example.autoriaclone.entity;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.example.autoriaclone.view.Views;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import java.util.Date;
@@ -18,29 +20,53 @@ import java.util.List;
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonView({Views.Seller.class, Views.Buyer.class, Views.ManagerAdmin.class})
     private Integer id;
+    @JsonView({Views.Seller.class, Views.Buyer.class, Views.ManagerAdmin.class})
     private String producer;
+    @JsonView({Views.Seller.class, Views.Buyer.class, Views.ManagerAdmin.class})
     private String model;
+    @JsonView({Views.Seller.class, Views.Buyer.class, Views.ManagerAdmin.class})
     private Integer year;
+    @JsonView({Views.Seller.class, Views.Buyer.class, Views.ManagerAdmin.class})
     private Integer power;
+    @JsonView({Views.Seller.class, Views.Buyer.class, Views.ManagerAdmin.class})
     private String type;
+    @JsonView({Views.Seller.class, Views.Buyer.class, Views.ManagerAdmin.class})
     private String details;
+    @JsonView({Views.Seller.class, Views.Buyer.class, Views.ManagerAdmin.class})
     private Integer runKm;
+    @JsonView({Views.Seller.class, Views.Buyer.class, Views.ManagerAdmin.class})
     private String region;
+    @JsonView({Views.Seller.class, Views.Buyer.class, Views.ManagerAdmin.class})
     private String place;
+    @JsonView({Views.Seller.class, Views.Buyer.class, Views.ManagerAdmin.class})
     private String color;
+    @JsonView({Views.Seller.class, Views.Buyer.class, Views.ManagerAdmin.class})
     private Double engineVolume;
+    @JsonView({Views.Seller.class, Views.Buyer.class, Views.ManagerAdmin.class})
     private Integer price;
+    @JsonView({Views.Seller.class, Views.Buyer.class, Views.ManagerAdmin.class})
     private String transmission;
+    @JsonView({Views.Seller.class, Views.Buyer.class, Views.ManagerAdmin.class})
     private String gearbox;
+    @JsonView({Views.Seller.class, Views.Buyer.class, Views.ManagerAdmin.class})
     private String currencyName;
+    @JsonView({Views.Seller.class, Views.Buyer.class, Views.ManagerAdmin.class})
     private String currencyValue;
+    @JsonView({Views.ManagerAdmin.class})
     private Integer checkCount;
+    @JsonView({Views.Seller.class, Views.ManagerAdmin.class})
     private Integer watchesPerDay;
+    @JsonView({Views.Seller.class, Views.ManagerAdmin.class})
     private Integer watchesPerWeek;
+    @JsonView({Views.Seller.class, Views.ManagerAdmin.class})
     private Integer watchesPerMonth;
+    @JsonView({Views.Seller.class, Views.ManagerAdmin.class})
     private Integer watchesTotal;
+    @JsonView({Views.ManagerAdmin.class})
     private boolean active;
+    @JsonView({Views.Seller.class, Views.Buyer.class, Views.ManagerAdmin.class})
     private Date creationDate;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(
@@ -48,6 +74,7 @@ public class Car {
             joinColumns = @JoinColumn(name = "cars_id"),
             inverseJoinColumns = @JoinColumn(name = "images_id")
     )
+    @JsonView({Views.Seller.class, Views.Buyer.class, Views.ManagerAdmin.class})
     private List<Image> images;
 
     public Car(String model, String producer, Integer year, Integer power,

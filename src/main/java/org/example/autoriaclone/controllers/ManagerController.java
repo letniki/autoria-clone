@@ -23,6 +23,7 @@ public class ManagerController {
 
     @GetMapping("/users")
     @RolesAllowed({"MANAGER","ADMIN"})
+    @JsonView({Views.ManagerAdmin.class})
     public ResponseEntity<List<UserDto>> getAllUsers(){
         return ResponseEntity.ok(userService.getAllUsers());
     }
@@ -34,11 +35,13 @@ public class ManagerController {
     }
     @PutMapping("/users/ban/{id}")
     @RolesAllowed({"MANAGER", "ADMIN"})
+    @JsonView({Views.ManagerAdmin.class})
     public UserResponse banUser(@PathVariable int id){
         return userService.banUser(id);
     }
     @PutMapping("/users/unban/{id}")
     @RolesAllowed({"MANAGER","ADMIN"})
+    @JsonView({Views.ManagerAdmin.class})
     public UserResponse unBanUser(@PathVariable int id){return userService.unBanUser(id);}
     @DeleteMapping("/cars/{id}")
     @RolesAllowed({"MANAGER","ADMIN"})

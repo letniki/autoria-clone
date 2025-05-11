@@ -1,5 +1,6 @@
 package org.example.autoriaclone.controllers;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import jakarta.annotation.security.RolesAllowed;
 import lombok.RequiredArgsConstructor;
 import org.example.autoriaclone.dto.ModelDto;
@@ -7,6 +8,7 @@ import org.example.autoriaclone.dto.ProducerDto;
 import org.example.autoriaclone.dto.UserDto;
 import org.example.autoriaclone.dto.responses.UserResponse;
 import org.example.autoriaclone.service.entityServices.*;
+import org.example.autoriaclone.view.Views;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +27,7 @@ public class AdminController {
 
     @PostMapping("/managers")
     @RolesAllowed("ADMIN")
+    @JsonView({Views.ManagerAdmin.class})
     public UserResponse createManager(@RequestBody UserDto userDto){
         return userService.createManager(userDto);
     }
@@ -46,19 +49,29 @@ public class AdminController {
     }
     @GetMapping("/managers")
     @RolesAllowed("ADMIN")
+    @JsonView({Views.ManagerAdmin.class})
     public ResponseEntity<List<UserDto>> getAllManagers(){
         return ResponseEntity.ok(userService.getAllManagers());
     }
     @PutMapping("/managers/{id}")
     @RolesAllowed("ADMIN")
+    @JsonView({Views.ManagerAdmin.class})
     public UserDto setManagerById(@PathVariable int id){
         return userService.setManager(id);
     }
     @PutMapping("/admins/{id}")
     @RolesAllowed("ADMIN")
+    @JsonView({Views.ManagerAdmin.class})
     public UserDto setAdminById(@PathVariable int id){
         return userService.setAdmin(id);
     }
+    @PutMapping("/sellers/{id}")
+    @RolesAllowed("ADMIN")
+    @JsonView({Views.ManagerAdmin.class})
+    public UserDto setSellerById(@PathVariable int id){
+        return userService.setSeller(id);
+    }
+
     @PutMapping("/premium/{id}")
     @RolesAllowed("ADMIN")
     public ResponseEntity<String> setPremiumById(@PathVariable int id){

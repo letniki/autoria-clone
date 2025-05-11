@@ -200,16 +200,24 @@ public class UserService {
         return userRepository.findByRole("MANAGER").stream().map(userMapper::toDto).toList();
     }
     public UserResponse banUser(int id){
-        User foundUser = userRepository.findById(id).get();
-        foundUser.setEnabled(false);
-        User saved = userRepository.save(foundUser);
-        return new UserResponse(userMapper.toDto(saved), null);
+        try{
+            User foundUser = userRepository.findById(id).get();
+            foundUser.setEnabled(false);
+            User saved = userRepository.save(foundUser);
+            return new UserResponse(userMapper.toDto(saved), null);
+        } catch (Exception e){
+            return new UserResponse(null, e.getMessage());
+        }
     }
     public UserResponse unBanUser(int id){
-        User user = userRepository.findById(id).get();
-        user.setEnabled(true);
-        User saved = userRepository.save(user);
-        return new UserResponse(userMapper.toDto(saved),null);
+        try{
+            User user = userRepository.findById(id).get();
+            user.setEnabled(true);
+            User saved = userRepository.save(user);
+            return new UserResponse(userMapper.toDto(saved),null);
+        } catch (Exception e){
+            return new UserResponse(null, e.getMessage());
+        }
     }
 
     //Admin:
@@ -241,6 +249,13 @@ public class UserService {
         User saved = userRepository.save(user);
         return userMapper.toDto(saved);
     }
+    public UserDto setSeller(int id){
+        User user = userRepository.findById(id).get();
+        user.setRole("SELLER");
+        User saved = userRepository.save(user);
+        return userMapper.toDto(saved);
+    }
+
     public String deleteUserById(int id){
         userRepository.deleteById(id);
         return "user with id: "+id+" was deleted";

@@ -32,6 +32,7 @@ public class BuyerController {
     private final CarTypeConst carTypeConst;
     private final RegionConst regionConst;
     @PostMapping("/register")
+    @JsonView({Views.Buyer.class})
     public ResponseEntity<UserResponse> register(@Valid @RequestBody UserDto userDto){
         return ResponseEntity.ok(userService.register(userDto));
     }
@@ -59,6 +60,7 @@ public class BuyerController {
         return ResponseEntity.ok(producerService.findAllProducers());
     }
     @GetMapping("/cars/basic/{id}")
+    @JsonView({Views.Buyer.class})
     public CarResponse getBasicCarById(@PathVariable int id){
         return carService.findByBasicId(id);
     }

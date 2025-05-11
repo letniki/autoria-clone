@@ -51,7 +51,7 @@ public class CarDto {
     private Integer runKm;
 
     @JsonView({Views.Seller.class, Views.Buyer.class, Views.ManagerAdmin.class})
-    @DecimalMax(value = "20.0", message = "engineVolume: max: {value}")
+    @DecimalMax(value = "8.0", message = "engineVolume: max: {value}")
     @DecimalMin(value = "0.0", message = "engineVolume: min: {value}")
     private Double engineVolume;
 

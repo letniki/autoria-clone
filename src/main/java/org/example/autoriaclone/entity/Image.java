@@ -25,6 +25,7 @@ public class Image {
 
     @Lob
     @Column(columnDefinition = "LONGBLOB")
+    @JsonView({Views.Details.class})
     private byte[] data;
     public Image(String imageName){
         this.imageName = imageName;
