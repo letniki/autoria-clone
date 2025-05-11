@@ -17,7 +17,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfQURNSU4iLCJzdWIiOiJuaWtpdGEiLCJpYXQiOjE3NDYyNzI3NzYsImV4cCI6MTc0NjI3OTk3Nn0.eK2FF7x5C7s04eHHC7pDRj_yOkzT2DezOqDGhNTBYTc",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfQURNSU4iLCJzdWIiOiJuaWtpdGEiLCJpYXQiOjE3NDY5ODI4NTMsImV4cCI6MTc0Njk5MDA1M30.Uptg8f4RKhCjJPc1rV3FK5YWMKGL6l8pzygE6q8XJQE",
 									"type": "string"
 								}
 							]
@@ -26,7 +26,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\":\"manager\",\r\n    \"password\":\"manager123\",\r\n    \"email\":\"manager@gmail.com\",\r\n    \"phone\": 7302342341\r\n}",
+							"raw": "{\r\n    \"username\":\"manager\",\r\n    \"password\":\"manager1\",\r\n    \"email\":\"manager@gmail.com\",\r\n    \"phone\": 1234567890\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -243,6 +243,36 @@
 					"response": []
 				},
 				{
+					"name": "setSellerById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfQURNSU4iLCJzdWIiOiJuaWtpdGEiLCJpYXQiOjE3NDY1MzEyNjUsImV4cCI6MTc0NjUzODQ2NX0.Jvo68vdIpRvjAwN_5WHPGm-QzcHheLtupb0Q-lJkxQk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/admin/managers/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"managers",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "setPremiumById",
 					"request": {
 						"auth": {
@@ -318,7 +348,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/admin/images?carId=5&imageId=352",
+							"raw": "localhost:8080/admin/images?carId=5&imageId=5",
 							"host": [
 								"localhost"
 							],
@@ -334,7 +364,7 @@
 								},
 								{
 									"key": "imageId",
-									"value": "352"
+									"value": "5"
 								}
 							]
 						}
@@ -505,7 +535,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/search?producer=BMW&model=M5",
+							"raw": "localhost:8080/search?producer=Toyota&model=Corolla",
 							"host": [
 								"localhost"
 							],
@@ -516,11 +546,11 @@
 							"query": [
 								{
 									"key": "producer",
-									"value": "BMW"
+									"value": "Toyota"
 								},
 								{
 									"key": "model",
-									"value": "M5"
+									"value": "Corolla"
 								},
 								{
 									"key": "ccy",
@@ -749,7 +779,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/manage/cars/1",
+							"raw": "localhost:8080/manage/cars/2",
 							"host": [
 								"localhost"
 							],
@@ -757,7 +787,7 @@
 							"path": [
 								"manage",
 								"cars",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -877,7 +907,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"model\":\"M5\",\r\n    \"producer\":\"BMW\",\r\n    \"year\":2016,\r\n    \"power\":585,\r\n    \"type\":\"Sedan\",\r\n    \"details\":\"Авто в ідеальному стані\",\r\n    \"runKm\":60000,\r\n    \"engineVolume\":4.4,\r\n    \"color\":\"white\",\r\n    \"region\":\"Kharkivska\",\r\n    \"place\":\"Kharkiv\",\r\n    \"transmission\":\"RWD\",\r\n    \"gearbox\":\"5\",\r\n    \"price\":53000,\r\n    \"currencyName\":\"USD\"\r\n}",
+							"raw": "{\r\n    \"model\":\"M5\",\r\n    \"producer\":\"BMW\",\r\n    \"year\":2016,\r\n    \"power\":585,\r\n    \"type\":\"Sedan\",\r\n    \"details\":\"Авто в ідеальному стані\",\r\n    \"runKm\":60000,\r\n    \"engineVolume\":4.4,\r\n    \"color\":\"white\",\r\n    \"region\":\"Kharkivska\",\r\n    \"place\":\"Kharkiv\",\r\n    \"transmission\":\"RWD\",\r\n    \"gearbox\":\"Автомат\",\r\n    \"price\":53000,\r\n    \"currencyName\":\"USD\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -906,7 +936,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfQURNSU4iLCJzdWIiOiJuaWtpdGEiLCJpYXQiOjE3NDY3MTM2NDAsImV4cCI6MTc0NjcyMDg0MH0.K5ZlOrBqS0cwqiXoScttl-ZjcRoYHnHQcJqEUQeeaz8",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfU0VMTEVSIiwic3ViIjoidGVzdDIiLCJpYXQiOjE3NDY5ODEyMjQsImV4cCI6MTc0Njk4ODQyNH0.h2_w2uBBDXrDdrJYcclqabbvpS-xt18iKG28dXCja_U",
 									"type": "string"
 								}
 							]
@@ -918,13 +948,13 @@
 							"formdata": [
 								{
 									"key": "id",
-									"value": "1",
+									"value": "3",
 									"type": "text"
 								},
 								{
 									"key": "image",
 									"type": "file",
-									"src": "/C:/Users/User/Downloads/m5.jpg"
+									"src": "/C:/Users/User/adImages/car-1-image-0.jpg"
 								}
 							]
 						},
@@ -980,7 +1010,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfQURNSU4iLCJzdWIiOiJuaWtpdGEiLCJpYXQiOjE3NDY3MTM2NDAsImV4cCI6MTc0NjcyMDg0MH0.K5ZlOrBqS0cwqiXoScttl-ZjcRoYHnHQcJqEUQeeaz8",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfQURNSU4iLCJzdWIiOiJuaWtpdGEiLCJpYXQiOjE3NDY5NjE3MDUsImV4cCI6MTc0Njk2ODkwNX0.ImU8O8iR7HHvtorDCv69gOu481F8c4J2rhO2Bg4PF_E",
 									"type": "string"
 								}
 							]
@@ -988,7 +1018,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/user/cars/average-price?model=Edge&producer=Ford&ccy=UAH",
+							"raw": "localhost:8080/user/cars/average-price?model=M5&producer=BMW&ccy=UAH",
 							"host": [
 								"localhost"
 							],
@@ -1001,15 +1031,20 @@
 							"query": [
 								{
 									"key": "model",
-									"value": "Edge"
+									"value": "M5"
 								},
 								{
 									"key": "producer",
-									"value": "Ford"
+									"value": "BMW"
 								},
 								{
 									"key": "ccy",
 									"value": "UAH"
+								},
+								{
+									"key": "region",
+									"value": "Kharkivska",
+									"disabled": true
 								}
 							]
 						}
@@ -1033,7 +1068,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"model\":\"M5\",\r\n    \"producer\":\"BMW\",\r\n    \"year\":2003,\r\n    \"power\":120,\r\n    \"type\":\"Hatchback\",\r\n    \"details\":\"Авто в ідеальному стані\",\r\n    \"runKm\":100000,\r\n    \"engineVolume\":2.0,\r\n    \"color\":\"black\",\r\n    \"region\":\"Kharkivska\",\r\n    \"place\":\"Kharkiv\",\r\n    \"transmition\":\"RWD\",\r\n    \"gearbox\":\"5\",\r\n    \"price\":5000,\r\n    \"currencyName\":\"EUR\"\r\n}",
+							"raw": "{\r\n    \"model\":\"Сorolla\",\r\n    \"producer\":\"Toyota\",\r\n    \"year\":2018,\r\n    \"power\":150,\r\n    \"type\":\"Sedan\",\r\n    \"details\":\"Авто в ідеальному стані\",\r\n    \"runKm\":100000,\r\n    \"engineVolume\":2.0,\r\n    \"color\":\"black\",\r\n    \"region\":\"Kharkivska\",\r\n    \"place\":\"Kharkiv\",\r\n    \"transmition\":\"RWD\",\r\n    \"gearbox\":\"Автомат\",\r\n    \"price\":15000,\r\n    \"currencyName\":\"EUR\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
