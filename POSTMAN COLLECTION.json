@@ -17,7 +17,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfQURNSU4iLCJzdWIiOiJuaWtpdGEiLCJpYXQiOjE3NDY5ODI4NTMsImV4cCI6MTc0Njk5MDA1M30.Uptg8f4RKhCjJPc1rV3FK5YWMKGL6l8pzygE6q8XJQE",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfQURNSU4iLCJzdWIiOiJuaWtpdGEiLCJpYXQiOjE3NDcwMzMwNjgsImV4cCI6MTc0NzA0MDI2OH0.QRMK_gmUL1cOje1v12tJKkZfRNZnUvkqBUgAUno-4WE",
 									"type": "string"
 								}
 							]
@@ -26,7 +26,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\":\"manager\",\r\n    \"password\":\"manager1\",\r\n    \"email\":\"manager@gmail.com\",\r\n    \"phone\": 1234567890\r\n}",
+							"raw": "{\r\n    \"username\":\"manager\",\r\n    \"password\":\"manager1\",\r\n    \"email\":\"nikitaletuta@gmail.com\",\r\n    \"phone\": 1234567890\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -250,7 +250,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfQURNSU4iLCJzdWIiOiJuaWtpdGEiLCJpYXQiOjE3NDY1MzEyNjUsImV4cCI6MTc0NjUzODQ2NX0.Jvo68vdIpRvjAwN_5WHPGm-QzcHheLtupb0Q-lJkxQk",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfQURNSU4iLCJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzQ3MDUxNDE4LCJleHAiOjE3NDcwNTg2MTh9.b7S1nCMDVV2gr6OeoHOeZkifrZyDNjmt5CVLwkEsyVw",
 									"type": "string"
 								}
 							]
@@ -258,15 +258,15 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/admin/managers/2",
+							"raw": "localhost:8080/admin/sellers/1",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"admin",
-								"managers",
-								"2"
+								"sellers",
+								"1"
 							]
 						}
 					},
@@ -383,7 +383,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\":\"nikita\",\r\n    \"password\":\"nikita1\"\r\n}",
+							"raw": "{\r\n    \"username\":\"test\",\r\n    \"password\":\"test1\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -742,7 +742,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfQURNSU4iLCJzdWIiOiJuaWtpdGEiLCJpYXQiOjE3NDY3MTM2NDAsImV4cCI6MTc0NjcyMDg0MH0.K5ZlOrBqS0cwqiXoScttl-ZjcRoYHnHQcJqEUQeeaz8",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfTUFOQUdFUiIsInN1YiI6InRlc3QyIiwiaWF0IjoxNzQ3MDQ5MTE5LCJleHAiOjE3NDcwNTYzMTl9.HWREMsnf76BLwtW2os1OVTzyhsPvCzNrhJ2gAim46VI",
 									"type": "string"
 								}
 							]
@@ -801,7 +801,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfQURNSU4iLCJzdWIiOiJuaWtpdGEiLCJpYXQiOjE3NDY3MTM2NDAsImV4cCI6MTc0NjcyMDg0MH0.K5ZlOrBqS0cwqiXoScttl-ZjcRoYHnHQcJqEUQeeaz8",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfTUFOQUdFUiIsInN1YiI6InRlc3QyIiwiaWF0IjoxNzQ3MDQ5MTE5LCJleHAiOjE3NDcwNTYzMTl9.HWREMsnf76BLwtW2os1OVTzyhsPvCzNrhJ2gAim46VI",
 									"type": "string"
 								}
 							]
@@ -809,7 +809,7 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/manage/users/ban/3",
+							"raw": "localhost:8080/manage/users/ban/2",
 							"host": [
 								"localhost"
 							],
@@ -818,7 +818,7 @@
 								"manage",
 								"users",
 								"ban",
-								"3"
+								"2"
 							]
 						}
 					},
@@ -832,7 +832,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfQURNSU4iLCJzdWIiOiJuaWtpdGEiLCJpYXQiOjE3NDY3MTM2NDAsImV4cCI6MTc0NjcyMDg0MH0.K5ZlOrBqS0cwqiXoScttl-ZjcRoYHnHQcJqEUQeeaz8",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfTUFOQUdFUiIsInN1YiI6InRlc3QyIiwiaWF0IjoxNzQ3MDUwNjc3LCJleHAiOjE3NDcwNTc4Nzd9.tMFnzwENmqYnmWdfjKe662hvE0gpeV83GNr32Pf14Uo",
 									"type": "string"
 								}
 							]
@@ -840,7 +840,7 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/manage/users/unban/3",
+							"raw": "localhost:8080/manage/users/unban/2",
 							"host": [
 								"localhost"
 							],
@@ -849,7 +849,7 @@
 								"manage",
 								"users",
 								"unban",
-								"3"
+								"2"
 							]
 						}
 					},
@@ -898,7 +898,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfQURNSU4iLCJzdWIiOiJuaWtpdGEiLCJpYXQiOjE3NDY3MTM2NDAsImV4cCI6MTc0NjcyMDg0MH0.K5ZlOrBqS0cwqiXoScttl-ZjcRoYHnHQcJqEUQeeaz8",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfU0VMTEVSIiwic3ViIjoidGVzdCIsImlhdCI6MTc0NzA0NTU4NCwiZXhwIjoxNzQ3MDUyNzg0fQ.0nlhFg98drhQXwnDFtUMHc5-bJloXiqgD9OQ6Xb34GM",
 									"type": "string"
 								}
 							]
@@ -907,7 +907,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"model\":\"M5\",\r\n    \"producer\":\"BMW\",\r\n    \"year\":2016,\r\n    \"power\":585,\r\n    \"type\":\"Sedan\",\r\n    \"details\":\"Авто в ідеальному стані\",\r\n    \"runKm\":60000,\r\n    \"engineVolume\":4.4,\r\n    \"color\":\"white\",\r\n    \"region\":\"Kharkivska\",\r\n    \"place\":\"Kharkiv\",\r\n    \"transmission\":\"RWD\",\r\n    \"gearbox\":\"Автомат\",\r\n    \"price\":53000,\r\n    \"currencyName\":\"USD\"\r\n}",
+							"raw": "{\r\n    \"producer\":\"Toyota\",\r\n    \"model\":\"Corolla\",\r\n    \"year\":2019,\r\n    \"power\":230,\r\n    \"type\":\"Sedan\",\r\n    \"details\":\"Авто в ідеальному стані\",\r\n    \"runKm\":55000,\r\n    \"engineVolume\":2.0,\r\n    \"color\":\"white\",\r\n    \"region\":\"Kharkivska\",\r\n    \"place\":\"Kharkiv\",\r\n    \"transmission\":\"RWD\",\r\n    \"gearbox\":\"Автомат\",\r\n    \"price\":20000,\r\n    \"currencyName\":\"EUR\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -936,7 +936,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfU0VMTEVSIiwic3ViIjoidGVzdDIiLCJpYXQiOjE3NDY5ODEyMjQsImV4cCI6MTc0Njk4ODQyNH0.h2_w2uBBDXrDdrJYcclqabbvpS-xt18iKG28dXCja_U",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfU0VMTEVSIiwic3ViIjoidGVzdCIsImlhdCI6MTc0NzA0NTU4NCwiZXhwIjoxNzQ3MDUyNzg0fQ.0nlhFg98drhQXwnDFtUMHc5-bJloXiqgD9OQ6Xb34GM",
 									"type": "string"
 								}
 							]
@@ -948,13 +948,13 @@
 							"formdata": [
 								{
 									"key": "id",
-									"value": "3",
+									"value": "4",
 									"type": "text"
 								},
 								{
 									"key": "image",
 									"type": "file",
-									"src": "/C:/Users/User/adImages/car-1-image-0.jpg"
+									"src": "/C:/Users/User/Downloads/mazda.jpg"
 								}
 							]
 						},
@@ -981,7 +981,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfQURNSU4iLCJzdWIiOiJuaWtpdGEiLCJpYXQiOjE3NDY3MTM2NDAsImV4cCI6MTc0NjcyMDg0MH0.K5ZlOrBqS0cwqiXoScttl-ZjcRoYHnHQcJqEUQeeaz8",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfU0VMTEVSIiwic3ViIjoidGVzdCIsImlhdCI6MTc0NzA0NTU4NCwiZXhwIjoxNzQ3MDUyNzg0fQ.0nlhFg98drhQXwnDFtUMHc5-bJloXiqgD9OQ6Xb34GM",
 									"type": "string"
 								}
 							]
@@ -1059,7 +1059,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfQURNSU4iLCJzdWIiOiJuaWtpdGEiLCJpYXQiOjE3NDY3MTM2NDAsImV4cCI6MTc0NjcyMDg0MH0.K5ZlOrBqS0cwqiXoScttl-ZjcRoYHnHQcJqEUQeeaz8",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfU0VMTEVSIiwic3ViIjoidGVzdCIsImlhdCI6MTc0NzA1MDc0MCwiZXhwIjoxNzQ3MDU3OTQwfQ.7WIbdkiEFveoQCmasAOn5yopbAqce0g4Hv9-_ubISMY",
 									"type": "string"
 								}
 							]
@@ -1068,7 +1068,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"model\":\"Сorolla\",\r\n    \"producer\":\"Toyota\",\r\n    \"year\":2018,\r\n    \"power\":150,\r\n    \"type\":\"Sedan\",\r\n    \"details\":\"Авто в ідеальному стані\",\r\n    \"runKm\":100000,\r\n    \"engineVolume\":2.0,\r\n    \"color\":\"black\",\r\n    \"region\":\"Kharkivska\",\r\n    \"place\":\"Kharkiv\",\r\n    \"transmition\":\"RWD\",\r\n    \"gearbox\":\"Автомат\",\r\n    \"price\":15000,\r\n    \"currencyName\":\"EUR\"\r\n}",
+							"raw": "{\r\n    \"model\":\"CX-5\",\r\n    \"producer\":\"Mazda\",\r\n    \"year\":2022,\r\n    \"power\":150,\r\n    \"type\":\"Crossover\",\r\n    \"details\":\"Авто в ідеальному стані\",\r\n    \"runKm\":10000,\r\n    \"engineVolume\":2.0,\r\n    \"color\":\"black\",\r\n    \"region\":\"Kyivska\",\r\n    \"place\":\"Kyiv\",\r\n    \"transmission\":\"4WD\",\r\n    \"gearbox\":\"Автомат\",\r\n    \"price\":32000,\r\n    \"currencyName\":\"EUR\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1076,7 +1076,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/user/cars/2",
+							"raw": "localhost:8080/user/cars/4",
 							"host": [
 								"localhost"
 							],
@@ -1084,7 +1084,7 @@
 							"path": [
 								"user",
 								"cars",
-								"2"
+								"4"
 							]
 						}
 					},
@@ -1098,7 +1098,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfQURNSU4iLCJzdWIiOiJuaWtpdGEiLCJpYXQiOjE3NDY3MTM2NDAsImV4cCI6MTc0NjcyMDg0MH0.K5ZlOrBqS0cwqiXoScttl-ZjcRoYHnHQcJqEUQeeaz8",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfTUFOQUdFUiIsInN1YiI6InRlc3QiLCJpYXQiOjE3NDcwMzI1NjUsImV4cCI6MTc0NzAzOTc2NX0.pN4uu8vL4zEj-tIkfZ7l4w1VowMeQfQG4CrrAg6vjuM",
 									"type": "string"
 								}
 							]
@@ -1128,7 +1128,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfQURNSU4iLCJzdWIiOiJuaWtpdGEiLCJpYXQiOjE3NDY3MTM2NDAsImV4cCI6MTc0NjcyMDg0MH0.K5ZlOrBqS0cwqiXoScttl-ZjcRoYHnHQcJqEUQeeaz8",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfU0VMTEVSIiwic3ViIjoidGVzdCIsImlhdCI6MTc0NzA0ODg1MSwiZXhwIjoxNzQ3MDU2MDUxfQ.ILiWGuSiUYbK96lxcDYvv4NPZGyKiHOma2V0fqu3vJo",
 									"type": "string"
 								}
 							]
@@ -1136,7 +1136,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/user/cars/img?id=2&fileName=car-2-image-0.jpg",
+							"raw": "localhost:8080/user/cars/img?id=4&fileName=car-4-image-1.png",
 							"host": [
 								"localhost"
 							],
@@ -1149,11 +1149,11 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "2"
+									"value": "4"
 								},
 								{
 									"key": "fileName",
-									"value": "car-2-image-0.jpg"
+									"value": "car-4-image-1.png"
 								}
 							]
 						}
@@ -1174,14 +1174,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/adImages/car-1-image-5.jpg",
+							"raw": "localhost:8080/adImages/car-4-image-0.jpg",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"adImages",
-								"car-1-image-5.jpg"
+								"car-4-image-0.jpg"
 							]
 						}
 					},
@@ -1196,7 +1196,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/get/img/52",
+							"raw": "localhost:8080/get/img/7",
 							"host": [
 								"localhost"
 							],
@@ -1204,7 +1204,7 @@
 							"path": [
 								"get",
 								"img",
-								"52"
+								"7"
 							]
 						}
 					},

@@ -22,7 +22,6 @@ public class ManagerMailSender {
     public void sendMail(Car car){
         List<User> managers = userRepository.findByRole(Role.MANAGER.name());
         List<String> managerEmails = managers.stream().map(User::getEmail).toList();
-        System.out.println(car);
         for (String managerEmail : managerEmails) {
             SimpleMailMessage message = new SimpleMailMessage();
             message.setFrom("letutanikita12@gmail.com");

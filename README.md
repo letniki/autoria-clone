@@ -1,12 +1,10 @@
-# AutoRia Clone
-
-Необхідно, щоб: Docker, Maven, Java 17 були встановлені
+### Для запуску проекту необхідно, щоб: Docker, Maven, Java 17 були встановлені
 
 ## Запуск проекту:
 1. Клонувати проект з Github
 2. Запустити проект через команду в терміналі: docker compose up
 
-В базі даних вже створений admin. Username: ... .Password:....
+В базі даних вже створений admin. Username: test.Password: test1.
 Ви можете залогінитись з цими даними і створити нового адміна.
 
 ## AdminController
