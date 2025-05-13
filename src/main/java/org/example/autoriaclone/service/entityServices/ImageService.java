@@ -18,15 +18,9 @@ public class ImageService {
 
     public String deleteImage(Integer imageId, Integer carId){
         Car car = carRepository.findById(carId).get();
-        String imageName = imageRepository.findById(imageId).get().getImageName();
         List<Image> images = car.getImages();
         images.removeIf(image-> image.getId().equals(imageId));
         car.setImages(images);
-        String path = System.getProperty("user.home") + File.separator + "adImages" + File.separator;
-        File f = new File(path+imageName);
-        if(!f.delete()){
-            return "Failed to delete image";
-        }
         carRepository.save(car);
         imageRepository.deleteById(imageId);
         return "Image with id: "+imageId+" was deleted";

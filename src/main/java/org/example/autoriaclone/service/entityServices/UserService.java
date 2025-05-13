@@ -328,51 +328,40 @@ public class UserService {
     public void isValidValues(Car car){
         List<Producer> allProducers = producerRepository.findAll();
         List<String> validProducers = allProducers.stream().map(Producer::getName).toList();
-        if(car.getProducer()==null){
-        }else if (!validProducers.contains(car.getProducer())){
+        if (car.getProducer() != null && !validProducers.contains(car.getProducer())) {
             throw new IllegalArgumentException("Not legal producer");
         }
         List<Model> allModels = modelRepository.findAll();
         List<String> validModels = allModels.stream().map(Model::getName).toList();
-        if(car.getModel()==null){
-        } else if(!validModels.contains(car.getModel())){
+        if (car.getModel() != null && !validModels.contains(car.getModel())) {
             throw new IllegalArgumentException("Not legal model");
         }
         List<String> allRegions = Arrays.stream(regionConst.getRegions()).toList();
-        if(car.getRegion()==null){
-        } else if(!allRegions.contains(car.getRegion())){
+        if (car.getRegion() != null && !allRegions.contains(car.getRegion())) {
             throw new IllegalArgumentException("Not legal region");
         }
         List<String> allTypes = Arrays.stream(carTypeConst.getTypes()).toList();
-        if(car.getType()==null){
-        } else if(!allTypes.contains(car.getType())){
+        if (car.getType() != null && !allTypes.contains(car.getType())) {
             throw new IllegalArgumentException("Not legal type");
         }
     }
     public void isValidValues(String producer, String model, String region, String types){
         List<Producer> allProducers = producerRepository.findAll();
         List<String> validProducers = allProducers.stream().map(Producer::getName).toList();
-        if(producer==null){
-        }else if (!validProducers.contains(producer)){
+        if (producer != null && !validProducers.contains(producer)) {
             throw new IllegalArgumentException("Not legal producer");
         }
         List<Model> allModels = modelRepository.findAll();
         List<String> validModels = allModels.stream().map(Model::getName).toList();
-        if(model==null){
-        }
-        else if(!validModels.contains(model)){
+        if (model != null && !validModels.contains(model)) {
             throw new IllegalArgumentException("Not legal model");
         }
         List<String> allRegions = Arrays.stream(regionConst.getRegions()).toList();
-        if(region==null){
-        }
-        else if(!allRegions.contains(region)){
+        if (region != null && !allRegions.contains(region)) {
             throw new IllegalArgumentException("Not legal region");
         }
         List<String> allTypes = Arrays.stream(carTypeConst.getTypes()).toList();
-        if(types==null){
-        }
-        else if(!allTypes.contains(types)){
+        if (types != null && !allTypes.contains(types)) {
             throw new IllegalArgumentException("Not legal type");
         }
     }
