@@ -1166,28 +1166,6 @@
 			"name": "Images",
 			"item": [
 				{
-					"name": "getImageByName",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:8080/adImages/car-4-image-0.jpg",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"adImages",
-								"car-4-image-0.jpg"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "GetImageById",
 					"request": {
 						"auth": {
