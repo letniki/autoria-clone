@@ -1191,18 +1191,26 @@
 			]
 		}
 	],
-	"variable": [
+	"event": [
 		{
-			"key": "seller_token",
-			"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfU0VMTEVSIiwic3ViIjoibWlsYW4iLCJpYXQiOjE2OTk1MjAyOTgsImV4cCI6MTY5OTUyNzQ5OH0.EYOKdwEUqg0X7Nmd61RiI9CsHB8LlA7s1f-8RU1WRK8"
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
 		},
 		{
-			"key": "admin_token",
-			"value": "eyJyb2xlcyI6IlJPTEVfQURNSU4iLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5OTUyMTA0MSwiZXhwIjoxNjk5NTI4MjQxfQ"
-		},
-		{
-			"key": "admin_token_valid",
-			"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfQURNSU4iLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5OTUyMTA0MSwiZXhwIjoxNjk5NTI4MjQxfQ.oS2bdqT5z5NaeBbeErmUAXPKo6bkHVgwHElKMxrPLsI"
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
